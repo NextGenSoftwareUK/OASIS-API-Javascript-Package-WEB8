@@ -3,16 +3,56 @@
     "route_prefix": "v1/mesh",
     "ops": {
       "RegisterNode": {
-        "verb": "post",
-        "route": "nodes"
+        "verb": "POST",
+        "route": "nodes",
+        "routeParams": [],
+        "queryParams": [],
+        "requestType": "GalacticNode",
+        "responseType": {
+          "wrapper": null,
+          "inner": "GalacticNode"
+        },
+        "summary": "The WEB8 fractal holonic mesh - register nodes, declare links, compute routes and relay messages with self-healing failover."
       },
       "GetNodes": {
-        "verb": "get",
-        "route": "nodes"
+        "verb": "GET",
+        "route": "nodes",
+        "routeParams": [],
+        "queryParams": [],
+        "requestType": null,
+        "responseType": {
+          "wrapper": null,
+          "inner": "List<GalacticNode>"
+        },
+        "summary": null
       },
       "AddLink": {
-        "verb": "post",
+        "verb": "POST",
         "route": "links",
+        "routeParams": [],
+        "queryParams": [
+          {
+            "name": "nodeAId",
+            "type": "Guid",
+            "optional": false
+          },
+          {
+            "name": "nodeBId",
+            "type": "Guid",
+            "optional": false
+          },
+          {
+            "name": "latencyMs",
+            "type": "double",
+            "optional": true
+          }
+        ],
+        "requestType": null,
+        "responseType": {
+          "wrapper": null,
+          "inner": "bool"
+        },
+        "summary": null,
         "query": [
           "nodeAId",
           "nodeBId",
@@ -20,20 +60,60 @@
         ]
       },
       "Heartbeat": {
-        "verb": "post",
-        "route": "nodes/{nodeId}/heartbeat"
+        "verb": "POST",
+        "route": "nodes/{nodeId}/heartbeat",
+        "routeParams": [
+          {
+            "name": "nodeId",
+            "type": "Guid"
+          }
+        ],
+        "queryParams": [],
+        "requestType": null,
+        "responseType": {
+          "wrapper": null,
+          "inner": "bool"
+        },
+        "summary": null
       },
       "ComputeRoute": {
-        "verb": "get",
+        "verb": "GET",
         "route": "route",
+        "routeParams": [],
+        "queryParams": [
+          {
+            "name": "sourceNodeId",
+            "type": "Guid",
+            "optional": false
+          },
+          {
+            "name": "destinationNodeId",
+            "type": "Guid",
+            "optional": false
+          }
+        ],
+        "requestType": null,
+        "responseType": {
+          "wrapper": null,
+          "inner": "List<Guid>"
+        },
+        "summary": null,
         "query": [
           "sourceNodeId",
           "destinationNodeId"
         ]
       },
       "SendMessage": {
-        "verb": "post",
-        "route": "send"
+        "verb": "POST",
+        "route": "send",
+        "routeParams": [],
+        "queryParams": [],
+        "requestType": "MeshMessage",
+        "responseType": {
+          "wrapper": null,
+          "inner": "MeshRouteResult"
+        },
+        "summary": "Routes and relays a message hop-by-hop to its destination, self-healing around any failed/stale node."
       }
     }
   },
@@ -41,19 +121,61 @@
     "route_prefix": "v1/protocol-bridge",
     "ops": {
       "TranslateInbound": {
-        "verb": "post",
+        "verb": "POST",
         "route": "translate-inbound",
+        "routeParams": [],
+        "queryParams": [
+          {
+            "name": "format",
+            "type": "BridgeFormat",
+            "optional": false
+          },
+          {
+            "name": "sourceNodeId",
+            "type": "Guid",
+            "optional": false
+          },
+          {
+            "name": "destinationNodeId",
+            "type": "Guid",
+            "optional": false
+          },
+          {
+            "name": "rawPayload",
+            "type": "string",
+            "optional": false
+          }
+        ],
+        "requestType": null,
+        "responseType": {
+          "wrapper": null,
+          "inner": "MeshMessage"
+        },
+        "summary": "Translates any external system's wire format into the unified WEB8 MeshMessage envelope and back.",
         "query": [
           "format",
           "sourceNodeId",
           "destinationNodeId"
         ],
-        "bodyParam": "rawPayload",
-        "bodyIsPrimitive": true
+        "bodyParam": "rawPayload"
       },
       "TranslateOutbound": {
-        "verb": "post",
+        "verb": "POST",
         "route": "translate-outbound",
+        "routeParams": [],
+        "queryParams": [
+          {
+            "name": "targetFormat",
+            "type": "BridgeFormat",
+            "optional": false
+          }
+        ],
+        "requestType": "MeshMessage",
+        "responseType": {
+          "wrapper": null,
+          "inner": "string"
+        },
+        "summary": null,
         "query": [
           "targetFormat"
         ]

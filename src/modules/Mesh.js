@@ -15,17 +15,17 @@ class MeshModule {
   constructor(http) {
     this._http = http;
 
-    // post v1/mesh/links (query: nodeAId, nodeBId, latencyMs)
+    // POST v1/mesh/links (query: nodeAId, nodeBId, latencyMs)
     this.addLink = makeOperation(http, "v1/mesh", "POST", "links", {"query":["nodeAId","nodeBId","latencyMs"]});
-    // get v1/mesh/route (query: sourceNodeId, destinationNodeId)
+    // GET v1/mesh/route (query: sourceNodeId, destinationNodeId)
     this.computeRoute = makeOperation(http, "v1/mesh", "GET", "route", {"query":["sourceNodeId","destinationNodeId"]});
-    // get v1/mesh/nodes
+    // GET v1/mesh/nodes
     this.getNodes = makeOperation(http, "v1/mesh", "GET", "nodes");
-    // post v1/mesh/nodes/{nodeId}/heartbeat
+    // POST v1/mesh/nodes/{nodeId}/heartbeat
     this.heartbeat = makeOperation(http, "v1/mesh", "POST", "nodes/{nodeId}/heartbeat");
-    // post v1/mesh/nodes
+    // POST v1/mesh/nodes
     this.registerNode = makeOperation(http, "v1/mesh", "POST", "nodes");
-    // post v1/mesh/send
+    // POST v1/mesh/send
     this.sendMessage = makeOperation(http, "v1/mesh", "POST", "send");
   }
 }

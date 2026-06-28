@@ -15,9 +15,9 @@ class ProtocolBridgeModule {
   constructor(http) {
     this._http = http;
 
-    // post v1/protocol-bridge/translate-inbound (query: format, sourceNodeId, destinationNodeId) (body: rawPayload)
+    // POST v1/protocol-bridge/translate-inbound (query: format, sourceNodeId, destinationNodeId) (body: rawPayload)
     this.translateInbound = makeOperation(http, "v1/protocol-bridge", "POST", "translate-inbound", {"query":["format","sourceNodeId","destinationNodeId"],"bodyParam":"rawPayload"});
-    // post v1/protocol-bridge/translate-outbound (query: targetFormat)
+    // POST v1/protocol-bridge/translate-outbound (query: targetFormat)
     this.translateOutbound = makeOperation(http, "v1/protocol-bridge", "POST", "translate-outbound", {"query":["targetFormat"]});
   }
 }
