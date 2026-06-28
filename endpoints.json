@@ -2,19 +2,62 @@
   "MeshController.cs": {
     "route_prefix": "v1/mesh",
     "ops": {
-      "RegisterNode": { "verb": "post", "route": "nodes" },
-      "GetNodes": { "verb": "get", "route": "nodes" },
-      "AddLink": { "verb": "post", "route": "links" },
-      "Heartbeat": { "verb": "post", "route": "nodes/{nodeId}/heartbeat" },
-      "ComputeRoute": { "verb": "get", "route": "route" },
-      "SendMessage": { "verb": "post", "route": "send" }
+      "RegisterNode": {
+        "verb": "post",
+        "route": "nodes"
+      },
+      "GetNodes": {
+        "verb": "get",
+        "route": "nodes"
+      },
+      "AddLink": {
+        "verb": "post",
+        "route": "links",
+        "query": [
+          "nodeAId",
+          "nodeBId",
+          "latencyMs"
+        ]
+      },
+      "Heartbeat": {
+        "verb": "post",
+        "route": "nodes/{nodeId}/heartbeat"
+      },
+      "ComputeRoute": {
+        "verb": "get",
+        "route": "route",
+        "query": [
+          "sourceNodeId",
+          "destinationNodeId"
+        ]
+      },
+      "SendMessage": {
+        "verb": "post",
+        "route": "send"
+      }
     }
   },
   "ProtocolBridgeController.cs": {
     "route_prefix": "v1/protocol-bridge",
     "ops": {
-      "TranslateInbound": { "verb": "post", "route": "translate-inbound" },
-      "TranslateOutbound": { "verb": "post", "route": "translate-outbound" }
+      "TranslateInbound": {
+        "verb": "post",
+        "route": "translate-inbound",
+        "query": [
+          "format",
+          "sourceNodeId",
+          "destinationNodeId"
+        ],
+        "bodyParam": "rawPayload",
+        "bodyIsPrimitive": true
+      },
+      "TranslateOutbound": {
+        "verb": "post",
+        "route": "translate-outbound",
+        "query": [
+          "targetFormat"
+        ]
+      }
     }
   }
 }

@@ -37,7 +37,12 @@ method takes a single args object:
 - Any key matching a `{token}` in the route template is consumed and
   substituted into the URL (case-insensitive match).
 - Any remaining keys become the query string (GET/DELETE) or JSON body
-  (POST/PUT).
+  (POST/PUT) - **matching the real `[FromQuery]`/`[FromBody]` binding of the
+  underlying C# action**, not just the HTTP verb. `endpoints.json` records
+  exactly which arg names are query-bound (and which single arg is the whole
+  body, for actions like `TranslateInbound` whose entire body is one
+  primitive `[FromBody] string`) per operation - see [`docs/`](./docs/README.md)
+  for the per-method breakdown.
 
 ```js
 // POST v1/mesh/nodes/{nodeId}/heartbeat -> nodeId consumed as a route token
@@ -45,14 +50,18 @@ await web8.mesh.heartbeat({ nodeId });
 
 // GET v1/mesh/route -> all args become query params
 const route = await web8.mesh.computeRoute({ sourceNodeId, destinationNodeId });
-```
 
-> **Note:** `mesh.addLink` and `protocolBridge.translateInbound` /
-> `translateOutbound` bind some of their parameters from the query string in
-> the underlying C# controller even though they're `POST`. The generated
-> wrapper sends all non-route args as a JSON body; if your server enforces
-> strict `[FromQuery]` binding for those specific calls, build the query
-> string yourself instead (e.g. via `web8.http.post(path, { query: {...} })`).
+// POST v1/mesh/links -> nodeAId/nodeBId/latencyMs are all [FromQuery] even
+// though this is a POST, so they're sent on the URL - no JSON body is sent
+await web8.mesh.addLink({ nodeAId, nodeBId, latencyMs: 12 });
+
+// POST v1/protocol-bridge/translate-inbound -> format/sourceNodeId/destinationNodeId
+// are [FromQuery]; rawPayload is the single [FromBody] string, so it becomes
+// the raw JSON body itself (not wrapped in an object)
+const inbound = await web8.protocolBridge.translateInbound({
+  format: 'Mqtt', sourceNodeId, destinationNodeId, rawPayload: '{"temp":21.5}'
+});
+```
 
 Every response has the shape:
 
@@ -101,7 +110,9 @@ const inbound = await web8.protocolBridge.translateInbound({
   rawPayload: '{"temp":21.5}'
 });
 
-const outbound = await web8.protocolBridge.translateOutbound({ targetFormat: 'Json', message: inbound.result });
+// targetFormat is [FromQuery]; the rest of the args become the MeshMessage
+// JSON body directly (not nested under a "message" key)
+const outbound = await web8.protocolBridge.translateOutbound({ targetFormat: 'Json', ...inbound.result });
 ```
 
 ## Module reference

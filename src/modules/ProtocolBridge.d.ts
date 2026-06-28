@@ -4,9 +4,9 @@ import type { OASISResponse } from '../core/types';
 export declare class ProtocolBridgeModule {
   constructor(http: unknown);
 
-  /** POST v1/protocol-bridge/translate-inbound */
+  /** POST v1/protocol-bridge/translate-inbound (query: format, sourceNodeId, destinationNodeId) (body: rawPayload) */
   translateInbound(args?: Record<string, any>): Promise<OASISResponse>;
 
-  /** POST v1/protocol-bridge/translate-outbound */
+  /** POST v1/protocol-bridge/translate-outbound (query: targetFormat) */
   translateOutbound(args?: Record<string, any>): Promise<OASISResponse>;
 }

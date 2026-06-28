@@ -4,10 +4,10 @@ import type { OASISResponse } from '../core/types';
 export declare class MeshModule {
   constructor(http: unknown);
 
-  /** POST v1/mesh/links */
+  /** POST v1/mesh/links (query: nodeAId, nodeBId, latencyMs) */
   addLink(args?: Record<string, any>): Promise<OASISResponse>;
 
-  /** GET v1/mesh/route */
+  /** GET v1/mesh/route (query: sourceNodeId, destinationNodeId) */
   computeRoute(args?: Record<string, any>): Promise<OASISResponse>;
 
   /** GET v1/mesh/nodes */

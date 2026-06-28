@@ -12,10 +12,10 @@ URL; everything else becomes the query string (GET/DELETE) or JSON body
 
 ## Methods
 
-| Method | HTTP | Route | Route params |
-| --- | --- | --- | --- |
-| `translateInbound` | POST | `v1/protocol-bridge/translate-inbound` | – |
-| `translateOutbound` | POST | `v1/protocol-bridge/translate-outbound` | – |
+| Method | HTTP | Route | Route params | Query params | Body |
+| --- | --- | --- | --- | --- | --- |
+| `translateInbound` | POST | `v1/protocol-bridge/translate-inbound` | – | `format`, `sourceNodeId`, `destinationNodeId` | `rawPayload` |
+| `translateOutbound` | POST | `v1/protocol-bridge/translate-outbound` | – | `targetFormat` | remaining args |
 
 ## Example
 

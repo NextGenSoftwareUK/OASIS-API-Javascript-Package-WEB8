@@ -12,14 +12,14 @@ URL; everything else becomes the query string (GET/DELETE) or JSON body
 
 ## Methods
 
-| Method | HTTP | Route | Route params |
-| --- | --- | --- | --- |
-| `addLink` | POST | `v1/mesh/links` | – |
-| `computeRoute` | GET | `v1/mesh/route` | – |
-| `getNodes` | GET | `v1/mesh/nodes` | – |
-| `heartbeat` | POST | `v1/mesh/nodes/{nodeId}/heartbeat` | `nodeId` |
-| `registerNode` | POST | `v1/mesh/nodes` | – |
-| `sendMessage` | POST | `v1/mesh/send` | – |
+| Method | HTTP | Route | Route params | Query params | Body |
+| --- | --- | --- | --- | --- | --- |
+| `addLink` | POST | `v1/mesh/links` | – | `nodeAId`, `nodeBId`, `latencyMs` | remaining args |
+| `computeRoute` | GET | `v1/mesh/route` | – | `sourceNodeId`, `destinationNodeId` | – |
+| `getNodes` | GET | `v1/mesh/nodes` | – | – | – |
+| `heartbeat` | POST | `v1/mesh/nodes/{nodeId}/heartbeat` | `nodeId` | – | remaining args |
+| `registerNode` | POST | `v1/mesh/nodes` | – | – | remaining args |
+| `sendMessage` | POST | `v1/mesh/send` | – | – | remaining args |
 
 ## Example
 
