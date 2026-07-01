@@ -1,4 +1,4 @@
-# web8-oasis-galactic-mesh-api
+# @oasisomniverse/web8-api
 
 Isomorphic (Node 18+ and browser) JavaScript/TypeScript-friendly client for the
 **WEB8 OASIS Galactic Mesh API** - fractal holonic mesh node registration,
@@ -12,14 +12,14 @@ browser.
 ## Installation
 
 ```bash
-npm install web8-oasis-galactic-mesh-api
+npm install @oasisomniverse/web8-api
 ```
 
 ## Quick start
 
 ```js
-const { Web8Client } = require('web8-oasis-galactic-mesh-api');
-// or: import { Web8Client } from 'web8-oasis-galactic-mesh-api';
+const { Web8Client } = require('@oasisomniverse/web8-api');
+// or: import { Web8Client } from '@oasisomniverse/web8-api';
 
 const web8 = new Web8Client({ baseUrl: 'https://api.web8.oasisomniverse.one' });
 

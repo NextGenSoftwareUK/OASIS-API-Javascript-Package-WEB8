@@ -7,7 +7,7 @@ const { attachGeneratedModules } = require('./modules/index');
 /**
  * Main SDK entry point. Works in Node 18+ and any modern browser.
  *
- *   const { Web8Client } = require('web8-oasis-galactic-mesh-api');
+ *   const { Web8Client } = require('@oasisomniverse/web8-api');
  *   const web8 = new Web8Client({ baseUrl: 'https://api.web8.oasisomniverse.one' });
  *   web8.setToken(jwtToken); // reuse a WEB4 OASIS JWT - WEB8 has no auth of its own
  *   const node = await web8.mesh.registerNode({ name: 'edge-node-1' });
