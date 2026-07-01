@@ -1,6 +1,6 @@
 # ProtocolBridge — `web8.protocolBridge`
 
-Source controller: [`ProtocolBridgeController.cs`](https://github.com/NextGenSoftwareUK/OASIS2/blob/main/WEB8/NextGenSoftware.OASIS.Web8.WebAPI/Controllers/ProtocolBridgeController.cs)
+Source controller: [`ProtocolBridgeController.cs`](https://github.com/NextGenSoftwareUK/OASIS/blob/main/WEB8/NextGenSoftware.OASIS.Web8.WebAPI/Controllers/ProtocolBridgeController.cs)
 Route prefix: `v1/protocol-bridge`
 2 operation(s).
 

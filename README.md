@@ -4,10 +4,28 @@ Isomorphic (Node 18+ and browser) JavaScript/TypeScript-friendly client for the
 **WEB8 OASIS Galactic Mesh API** - fractal holonic mesh node registration,
 link/route computation, self-healing message relay, and protocol-bridge
 translation between external wire formats and the unified `MeshMessage`
-envelope, built on the OASIS2 WEB8 WebAPI.
+envelope, built on the OASIS WEB8 WebAPI.
 
 Zero dependencies. Wraps the global `fetch`. Works the same in Node and the
 browser.
+
+## About WEB8
+
+> **"One planet, one signal."**
+
+WEB8 unifies Earth's fragmented networks — chains, APIs, IoT devices and human consciousness — into a single coherent node capable of communicating with other civilizations. Using fractal holonic architecture, it creates a self-healing mesh where every node contains the intelligence of the whole, maintains full sovereignty, and connects via a universal protocol bridge that transcends any single communication standard, terrestrial or otherwise.
+
+WEB8 builds on **[WEB4](https://www.npmjs.com/package/@oasisomniverse/web4-api)** through **[WEB7](https://www.npmjs.com/package/@oasisomniverse/web7-api)**, and is one layer of the wider **[OASIS Omniverse](https://oasisomniverse.one)** (WEB4 through WEB10).
+
+## About The OASIS Omniverse
+
+The OASIS (Open Advanced Sensory Immersion System) is the universal interoperability layer connecting all of WEB2 and WEB3 — every blockchain, database, cloud provider and protocol — into one unified, fault-tolerant API. Rather than picking a single tech stack, the OASIS harnesses the best of every provider (auto-failover, auto-load-balancing, auto-replication) so nothing is ever a single point of failure, and hides the complexity behind one intuitive API so you never need to learn a new stack again — even as underlying tech evolves, your app keeps working with zero changes.
+
+At its core sits one Avatar with one SSO login and one Karma reputation score that travels with you across every app, game and world built on top of it — full transparency and full control over your own data, right down to the field level.
+
+This is the foundation of the OASIS Omniverse: a network of unified layers, WEB4 (identity & unification) through WEB10 (source), each building on the one below to connect blockchains, metaverses, AI, human consciousness and beyond into a single interoperable whole.
+
+👉 See the full ecosystem at **[oasisomniverse.one](https://oasisomniverse.one)**.
 
 ## Installation
 
@@ -30,7 +48,7 @@ console.log(result);
 
 ## Calling any endpoint
 
-Every controller on the OASIS2 WEB8 WebAPI is reachable as a lowerCamel
+Every controller on the OASIS WEB8 WebAPI is reachable as a lowerCamel
 property on the client (`web8.mesh`, `web8.protocolBridge`). Every generated
 method takes a single args object:
 

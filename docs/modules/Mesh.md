@@ -1,6 +1,6 @@
 # Mesh — `web8.mesh`
 
-Source controller: [`MeshController.cs`](https://github.com/NextGenSoftwareUK/OASIS2/blob/main/WEB8/NextGenSoftware.OASIS.Web8.WebAPI/Controllers/MeshController.cs)
+Source controller: [`MeshController.cs`](https://github.com/NextGenSoftwareUK/OASIS/blob/main/WEB8/NextGenSoftware.OASIS.Web8.WebAPI/Controllers/MeshController.cs)
 Route prefix: `v1/mesh`
 6 operation(s).
 
