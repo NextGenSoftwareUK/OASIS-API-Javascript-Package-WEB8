@@ -1,9 +1,9 @@
-# @oasisomniverse/web8-api
+﻿# @oasisomniverse/web8-api
 
 - [@oasisomniverse/web8-api](#oasisomniverseweb8-api)
-  - [About WEB8](#about-web8)
+  - [About WEB 8](#about-web-8)
   - [About The OASIS Omniverse](#about-the-oasis-omniverse)
-  - [Benefits Of Building On The WEB8 Galactic Mesh API](#benefits-of-building-on-the-web8-galactic-mesh-api)
+  - [Benefits Of Building On The WEB 8 Galactic Mesh API](#benefits-of-building-on-the-web-8-galactic-mesh-api)
   - [WEB 8 Galactic Mesh API Packages](#web-8-galactic-mesh-api-packages)
     - [Javascript](#javascript)
     - [C#](#c)
@@ -19,21 +19,21 @@
   - [License](#license)
 
 Isomorphic (Node 18+ and browser) JavaScript/TypeScript-friendly client for the
-**WEB8 OASIS Galactic Mesh API** - fractal holonic mesh node registration,
+**WEB 8 OASIS Galactic Mesh API** - fractal holonic mesh node registration,
 link/route computation, self-healing message relay, and protocol-bridge
 translation between external wire formats and the unified `MeshMessage`
-envelope, built on the OASIS WEB8 WebAPI.
+envelope, built on the OASIS WEB 8 WebAPI.
 
 Zero dependencies. Wraps the global `fetch`. Works the same in Node and the
 browser.
 
-## About WEB8
+## About WEB 8
 
 > **"One planet, one signal."**
 
-WEB8 unifies Earth's fragmented networks — chains, APIs, IoT devices and human consciousness — into a single coherent node capable of communicating with other civilizations. Using fractal holonic architecture, it creates a self-healing mesh where every node contains the intelligence of the whole, maintains full sovereignty, and connects via a universal protocol bridge that transcends any single communication standard, terrestrial or otherwise.
+WEB 8 unifies Earth's fragmented networks — chains, APIs, IoT devices and human consciousness — into a single coherent node capable of communicating with other civilizations. Using fractal holonic architecture, it creates a self-healing mesh where every node contains the intelligence of the whole, maintains full sovereignty, and connects via a universal protocol bridge that transcends any single communication standard, terrestrial or otherwise.
 
-WEB8 builds on **[WEB4](https://www.npmjs.com/package/@oasisomniverse/web4-api)** through **[WEB7](https://www.npmjs.com/package/@oasisomniverse/web7-api)**, and is one layer of the wider **[OASIS Omniverse](https://oasisomniverse.one)** (WEB4 through WEB10).
+WEB 8 builds on **[WEB 4](https://www.npmjs.com/package/@oasisomniverse/web4-api)** through **[WEB 7](https://www.npmjs.com/package/@oasisomniverse/web7-api)**, and is one layer of the wider **[OASIS Omniverse](https://oasisomniverse.one)** (WEB 4 through WEB 10).
 
 ## About The OASIS Omniverse
 
@@ -41,28 +41,28 @@ The OASIS (Open Advanced Sensory Immersion System) is the universal interoperabi
 
 At its core sits one Avatar with one SSO login and one Karma reputation score that travels with you across every app, game and world built on top of it — full transparency and full control over your own data, right down to the field level.
 
-This is the foundation of the OASIS Omniverse: a network of unified layers, WEB4 (identity & unification) through WEB10 (source), each building on the one below to connect blockchains, metaverses, AI, human consciousness and beyond into a single interoperable whole.
+This is the foundation of the OASIS Omniverse: a network of unified layers, WEB 4 (identity & unification) through WEB 10 (source), each building on the one below to connect blockchains, metaverses, AI, human consciousness and beyond into a single interoperable whole.
 
 👉 See the full ecosystem at **[oasisomniverse.one](https://oasisomniverse.one)**.
 
 <a name="web8-mesh-benefits"></a>
 
-## Benefits Of Building On The WEB8 Galactic Mesh API
+## Benefits Of Building On The WEB 8 Galactic Mesh API
 
 - **"One planet, one signal" - unifies chains, APIs, IoT devices and human consciousness into a single coherent node.**
 - **Fractal holonic mesh architecture - every node contains the intelligence of the whole while retaining full sovereignty.**
 - **Self-healing message relay and automatic route computation - the mesh routes around failures without manual intervention.**
 - **Universal protocol bridge - translates between external wire formats (MQTT, etc.) and the unified `MeshMessage` envelope, transcending any single communication standard.**
-- **Builds directly on WEB4 through WEB7 - no separate identity, AI or symbiosis system to bolt on.**
+- **Builds directly on WEB 4 through WEB 7 - no separate identity, AI or symbiosis system to bolt on.**
 - **Integrate any WEB2 or WEB3 tech into your (web)app without having to learn or worry about new tech stacks/languages.**
-- **SSO Avatar with a Karma reputation system (inherited from WEB4 - full accountability, zero crime, dark-net proof).**
+- **SSO Avatar with a Karma reputation system (inherited from WEB 4 - full accountability, zero crime, dark-net proof).**
 - **Maximum integration & interoperability, auto load-balancing, auto fail-over, auto replication.**
 - **HOT-swappable plugin architecture. HTTP REST/gRPC/GraphQL/CLI/Native endpoints.**
 - **Write once, deploy everywhere, now and forever - the GOD Protocol/API.**
 - **Full redundancy/zero downtime - impossible to shut down. Zero lag.**
 - **Decentralised distributed P2P networking - works offline and syncs automatically (even over LAN/Bluetooth/Mesh).**
 - **Agent-centric: you own and store your own data.**
-- **WEB9 Singularity Layer ready.**
+- **WEB 9 Singularity Layer ready.**
 
 Check out more info below:<br><br>
 [The Power Of The OASIS API](https://drive.google.com/file/d/1nnhGpXcprr6kota1Y85HDDKsBfJHN6sn/view?usp=sharing) <br>
@@ -152,7 +152,7 @@ console.log(result);
 
 ## Calling any endpoint
 
-Every controller on the OASIS WEB8 WebAPI is reachable as a lowerCamel
+Every controller on the OASIS WEB 8 WebAPI is reachable as a lowerCamel
 property on the client (`web8.mesh`, `web8.protocolBridge`). Every generated
 method takes a single args object:
 
@@ -199,8 +199,8 @@ interface OASISResponse<T = any> {
 
 ## Auth
 
-WEB8 is an internal galactic-mesh/protocol-bridge layer that sits behind the
-same OASIS avatar identity as WEB4/WEB5/WEB6/WEB7 - it has no avatar/login
+WEB 8 is an internal galactic-mesh/protocol-bridge layer that sits behind the
+same OASIS avatar identity as WEB 4/WEB 5/WEB 6/WEB 7 - it has no avatar/login
 endpoints of its own. Reuse a JWT you've already obtained elsewhere (e.g.
 from `web4-oasis-api`'s `client.auth.login()`):
 
@@ -254,7 +254,7 @@ parameter and route details.
 ## Regenerating
 
 The generated modules, type declarations and docs are produced from
-`endpoints.json` (extracted from the WEB8 WebAPI controller source):
+`endpoints.json` (extracted from the WEB 8 WebAPI controller source):
 
 ```bash
 npm run generate   # src/modules/*.js + src/modules/index.js
