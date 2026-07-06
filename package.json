@@ -1,6 +1,6 @@
-{
+﻿{
   "name": "@oasisomniverse/web8-api",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "publishConfig": { "access": "public" },
   "description": "Isomorphic (Node + browser) JavaScript/TypeScript-friendly client for the WEB8 OASIS Galactic Mesh API - fractal holonic mesh node registration, link/route computation, self-healing message relay, and protocol-bridge translation between external wire formats and the unified MeshMessage envelope, built on the OASIS WEB8 WebAPI.",
   "main": "index.js",
