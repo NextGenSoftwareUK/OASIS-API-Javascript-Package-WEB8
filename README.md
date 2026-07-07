@@ -15,7 +15,7 @@
   - [Module examples](#module-examples)
   - [Module reference](#module-reference)
   - [Regenerating](#regenerating)
-  - [Testing](#testing)
+  - [Testing](#testing)  - [Troubleshooting](#troubleshooting)
   - [License](#license)
 
 Isomorphic (Node 18+ and browser) JavaScript/TypeScript-friendly client for the
@@ -272,6 +272,26 @@ npm run docs       # docs/README.md + docs/modules/*.md
 npm test
 ```
 
+
+## Troubleshooting
+
+**`Failed to execute 'fetch' on 'Window': Illegal invocation`** — add this one-liner before your SDK script tag:
+
+```html
+<script>if(window.fetch) window.fetch = window.fetch.bind(window);</script>
+```
+
+Or pass a bound fetch to the constructor:
+
+```js
+const client = new Web8Client({
+  baseUrl: 'https://api.web8.oasisomniverse.one',
+  fetchImpl: window.fetch.bind(window)
+});
+```
+
+See [docs/troubleshooting.md](docs/troubleshooting.md) for the full list of common issues.
 ## License
 
 MIT
+
