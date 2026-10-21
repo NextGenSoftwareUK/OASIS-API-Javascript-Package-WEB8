@@ -5,8 +5,8 @@ export declare class ProtocolBridgeModule {
   constructor(http: unknown);
 
   /** POST v1/protocol-bridge/translate-inbound (query: format, sourceNodeId, destinationNodeId) (body: rawPayload) */
-  translateInbound(args?: Record<string, any>): Promise<OASISResponse>;
+  translateInbound(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST v1/protocol-bridge/translate-outbound (query: targetFormat) */
-  translateOutbound(args?: Record<string, any>): Promise<OASISResponse>;
+  translateOutbound(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 }

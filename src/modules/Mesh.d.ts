@@ -5,20 +5,20 @@ export declare class MeshModule {
   constructor(http: unknown);
 
   /** POST v1/mesh/links (query: nodeAId, nodeBId, latencyMs) */
-  addLink(args?: Record<string, any>): Promise<OASISResponse>;
+  addLink(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET v1/mesh/route (query: sourceNodeId, destinationNodeId) */
-  computeRoute(args?: Record<string, any>): Promise<OASISResponse>;
+  computeRoute(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** GET v1/mesh/nodes */
-  getNodes(args?: Record<string, any>): Promise<OASISResponse>;
+  getNodes(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST v1/mesh/nodes/{nodeId}/heartbeat */
-  heartbeat(args?: Record<string, any>): Promise<OASISResponse>;
+  heartbeat(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST v1/mesh/nodes */
-  registerNode(args?: Record<string, any>): Promise<OASISResponse>;
+  registerNode(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 
   /** POST v1/mesh/send */
-  sendMessage(args?: Record<string, any>): Promise<OASISResponse>;
+  sendMessage(args?: Record<string, any>, requestOptions?: { idempotencyKey?: string }): Promise<OASISResponse>;
 }
