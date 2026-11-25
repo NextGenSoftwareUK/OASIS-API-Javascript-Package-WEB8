@@ -37,6 +37,8 @@ export declare class Web8Client {
   readonly tokenStore: TokenStore;
   readonly mesh: MeshModule;
   readonly protocolBridge: ProtocolBridgeModule;
+  /** GET /health - liveness check; no token needed. */
+  health(): Promise<OASISResponse>;
   setBaseUrl(baseUrl: string): void;
   setToken(jwtToken: string, sessionExtras?: Partial<OASISSession>): void;
 }
